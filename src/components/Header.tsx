@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoGest from "@/assets/logo-gest.png";
 
 const navItems = [
   { label: "Accueil", path: "/" },
@@ -19,11 +20,8 @@ const Header = () => {
       <div className="container mx-auto px-4 flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
-            <span className="text-secondary-foreground font-display text-xl font-bold">G</span>
-          </div>
+          <img src={logoGest} alt="Logo GEST" className="h-12 w-auto" />
           <div>
-            <span className="text-primary-foreground font-display text-xl font-bold tracking-wide">GEST</span>
             <span className="hidden md:block text-primary-foreground/60 text-[10px] leading-none tracking-wider uppercase">
               Gestion · Étude · Stratégie
             </span>

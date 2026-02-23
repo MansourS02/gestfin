@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail } from "lucide-react";
+import logoGest from "@/assets/logo-gest.png";
 
 const Footer = () => {
   return (
@@ -9,10 +10,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
-                <span className="text-secondary-foreground font-display text-xl font-bold">G</span>
-              </div>
-              <span className="font-display text-xl font-bold">GEST</span>
+              <img src={logoGest} alt="Logo GEST" className="h-14 w-auto" />
             </div>
             <p className="text-primary-foreground/60 text-sm leading-relaxed">
               Gestion · Étude · Stratégie Marketing. Plus de 20 ans d'expertise au service de votre réussite.
