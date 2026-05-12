@@ -34,7 +34,9 @@ const Contact = () => {
   });
 
   const onSubmit = async (data: FormData) => {
-    const { error } = await supabase.from("contact_messages").insert(data);
+    const { error } = await supabase.from("contact_messages").insert({
+      nom: data.nom, email: data.email, sujet: data.sujet, message: data.message,
+    });
     if (error) {
       toast.error("Erreur : " + error.message);
       return;
