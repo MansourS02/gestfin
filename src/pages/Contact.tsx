@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const schema = z.object({
   nom: z.string().trim().min(2, "Nom requis").max(100),
@@ -32,8 +33,14 @@ const Contact = () => {
     defaultValues: { nom: "", email: "", sujet: "", message: "" },
   });
 
-  const onSubmit = (data: FormData) => {
-    console.log("Contact:", data);
+  const onSubmit = async (data: FormData) => {
+    const { error } = await supabase.from("contact_messages").insert({
+      nom: data.nom, email: data.email, sujet: data.sujet, message: data.message,
+    });
+    if (error) {
+      toast.error("Erreur : " + error.message);
+      return;
+    }
     toast.success("Message envoyé avec succès !");
     form.reset();
   };

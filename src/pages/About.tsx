@@ -83,8 +83,7 @@ const About = () => {
               </div>
               <h3 className="font-display text-2xl font-bold mb-4">Notre vision</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Devenir le cabinet de référence en Afrique de l'Ouest pour le conseil en management, marketing stratégique 
-                et formation professionnelle, en plaçant l'excellence et l'innovation au cœur de notre approche.
+                Devenir le cabinet de référence en Afrique de l'Ouest, alliant excellence et innovation.
               </p>
             </div>
           </div>
