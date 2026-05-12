@@ -11,6 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { CalendarDays, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const schema = z.object({
   nom: z.string().trim().min(2, "Nom requis").max(100),
@@ -45,8 +46,20 @@ const Appointment = () => {
     defaultValues: { nom: "", entreprise: "", telephone: "", email: "", service: "", date: "", message: "" },
   });
 
-  const onSubmit = (data: FormData) => {
-    console.log("Rendez-vous demandé:", data);
+  const onSubmit = async (data: FormData) => {
+    const { error } = await supabase.from("appointments").insert({
+      nom: data.nom,
+      entreprise: data.entreprise || null,
+      telephone: data.telephone,
+      email: data.email,
+      service: data.service,
+      date_souhaitee: data.date,
+      message: data.message || null,
+    });
+    if (error) {
+      toast.error("Erreur lors de l'envoi : " + error.message);
+      return;
+    }
     setSubmitted(true);
     toast.success("Votre demande a été envoyée avec succès !");
   };

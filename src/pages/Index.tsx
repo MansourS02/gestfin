@@ -33,8 +33,6 @@ const services = [
 
 const stats = [
   { value: "20+", label: "Années d'expérience" },
-  { value: "500+", label: "Projets réalisés" },
-  { value: "200+", label: "Clients accompagnés" },
   { value: "100%", label: "Engagement qualité" },
 ];
 
@@ -98,7 +96,7 @@ const Index = () => {
       {/* Stats */}
       <section className="bg-primary py-8">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 gap-6 max-w-2xl mx-auto">
             {stats.map((s, i) => (
               <div key={i} className="text-center py-4">
                 <div className="font-display text-3xl md:text-4xl font-bold text-secondary">{s.value}</div>
