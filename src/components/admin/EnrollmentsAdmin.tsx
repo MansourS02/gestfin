@@ -13,9 +13,13 @@ export default function EnrollmentsAdmin() {
   const load = async () => {
     const { data } = await supabase
       .from("enrollments")
-      .select("id, status, enrolled_at, user_id, courses(title), profiles!enrollments_user_id_fkey(full_name)")
+      .select("id, status, enrolled_at, user_id, courses(title)")
       .order("enrolled_at", { ascending: false });
-    if (data) setEnrollments(data);
+    if (!data) return;
+    const userIds = [...new Set(data.map((e) => e.user_id))];
+    const { data: profs } = await supabase.from("profiles").select("id, full_name").in("id", userIds);
+    const profMap = new Map((profs || []).map((p) => [p.id, p.full_name]));
+    setEnrollments(data.map((e) => ({ ...e, full_name: profMap.get(e.user_id) })));
   };
 
   useEffect(() => { load(); }, []);
