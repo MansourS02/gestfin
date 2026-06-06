@@ -10,6 +10,9 @@ import Contact from "./pages/Contact";
 import Appointment from "./pages/Appointment";
 import Auth from "./pages/Auth";
 import Admin from "./pages/Admin";
+import Formations from "./pages/Formations";
+import FormationDetail from "./pages/FormationDetail";
+import Learn from "./pages/Learn";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
