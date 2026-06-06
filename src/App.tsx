@@ -10,6 +10,9 @@ import Contact from "./pages/Contact";
 import Appointment from "./pages/Appointment";
 import Auth from "./pages/Auth";
 import Admin from "./pages/Admin";
+import Formations from "./pages/Formations";
+import FormationDetail from "./pages/FormationDetail";
+import Learn from "./pages/Learn";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +29,9 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/rendez-vous" element={<Appointment />} />
+          <Route path="/formations" element={<Formations />} />
+          <Route path="/formations/:slug" element={<FormationDetail />} />
+          <Route path="/apprendre/:slug" element={<Learn />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<NotFound />} />

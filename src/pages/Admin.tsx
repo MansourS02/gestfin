@@ -7,7 +7,9 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
-import { LogOut, Calendar, Mail, Trash2, Check } from "lucide-react";
+import { LogOut, Calendar, Mail, Trash2, Check, GraduationCap, Users } from "lucide-react";
+import CoursesAdmin from "@/components/admin/CoursesAdmin";
+import EnrollmentsAdmin from "@/components/admin/EnrollmentsAdmin";
 
 interface Appointment {
   id: string;
@@ -142,6 +144,12 @@ const Admin = () => {
               <TabsTrigger value="messages">
                 <Mail className="w-4 h-4 mr-2" /> Messages ({messages.filter(m => !m.lu).length})
               </TabsTrigger>
+              <TabsTrigger value="courses">
+                <GraduationCap className="w-4 h-4 mr-2" /> Formations
+              </TabsTrigger>
+              <TabsTrigger value="enrollments">
+                <Users className="w-4 h-4 mr-2" /> Inscriptions
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent value="appointments">
@@ -226,6 +234,14 @@ const Admin = () => {
                   </div>
                 ))}
               </div>
+            </TabsContent>
+
+            <TabsContent value="courses">
+              <CoursesAdmin />
+            </TabsContent>
+
+            <TabsContent value="enrollments">
+              <EnrollmentsAdmin />
             </TabsContent>
           </Tabs>
         </div>
