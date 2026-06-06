@@ -235,6 +235,14 @@ const Admin = () => {
                 ))}
               </div>
             </TabsContent>
+
+            <TabsContent value="courses">
+              <CoursesAdmin />
+            </TabsContent>
+
+            <TabsContent value="enrollments">
+              <EnrollmentsAdmin />
+            </TabsContent>
           </Tabs>
         </div>
       </section>
