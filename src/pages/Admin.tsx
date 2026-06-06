@@ -7,7 +7,9 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
-import { LogOut, Calendar, Mail, Trash2, Check } from "lucide-react";
+import { LogOut, Calendar, Mail, Trash2, Check, GraduationCap, Users } from "lucide-react";
+import CoursesAdmin from "@/components/admin/CoursesAdmin";
+import EnrollmentsAdmin from "@/components/admin/EnrollmentsAdmin";
 
 interface Appointment {
   id: string;
