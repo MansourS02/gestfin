@@ -144,6 +144,12 @@ const Admin = () => {
               <TabsTrigger value="messages">
                 <Mail className="w-4 h-4 mr-2" /> Messages ({messages.filter(m => !m.lu).length})
               </TabsTrigger>
+              <TabsTrigger value="courses">
+                <GraduationCap className="w-4 h-4 mr-2" /> Formations
+              </TabsTrigger>
+              <TabsTrigger value="enrollments">
+                <Users className="w-4 h-4 mr-2" /> Inscriptions
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent value="appointments">
