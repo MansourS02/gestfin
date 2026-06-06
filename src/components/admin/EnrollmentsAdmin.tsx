@@ -21,7 +21,7 @@ export default function EnrollmentsAdmin() {
   useEffect(() => { load(); }, []);
 
   const updateStatus = async (id: string, status: string) => {
-    const { error } = await supabase.from("enrollments").update({ status }).eq("id", id);
+    const { error } = await supabase.from("enrollments").update({ status: status as "active" | "cancelled" | "completed" | "pending" }).eq("id", id);
     if (error) toast.error(error.message);
     else { toast.success("Statut mis à jour"); load(); }
   };
