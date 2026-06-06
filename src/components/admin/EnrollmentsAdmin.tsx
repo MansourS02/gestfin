@@ -56,7 +56,7 @@ export default function EnrollmentsAdmin() {
           {enrollments.map((e) => (
             <TableRow key={e.id}>
               <TableCell className="text-sm">{new Date(e.enrolled_at).toLocaleDateString("fr-FR")}</TableCell>
-              <TableCell className="text-sm">{e.profiles?.full_name || e.user_id.slice(0, 8)}</TableCell>
+              <TableCell className="text-sm">{e.full_name || e.user_id.slice(0, 8)}</TableCell>
               <TableCell className="text-sm">{e.courses?.title}</TableCell>
               <TableCell>
                 <Select value={e.status} onValueChange={(v) => updateStatus(e.id, v)}>
