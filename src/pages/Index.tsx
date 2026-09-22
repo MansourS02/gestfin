@@ -38,19 +38,9 @@ const stats = [
 
 const testimonials = [
   {
-    name: "Fatou Diallo",
-    role: "DG, Teranga Solutions",
-    text: "GEST a transformé notre vision stratégique. Un accompagnement professionnel et rigoureux qui a propulsé notre entreprise.",
-  },
-  {
-    name: "Ibrahima Ndiaye",
-    role: "Fondateur, SenTech SA",
-    text: "Grâce au business plan élaboré par GEST, nous avons obtenu les financements nécessaires à notre expansion régionale.",
-  },
-  {
-    name: "Aminata Ba",
-    role: "Directrice Marketing, AfriBrand",
-    text: "Les formations dispensées par M. Sow ont révolutionné notre approche du marketing digital. Résultats concrets en 3 mois.",
+    name: "M. Ndiaye Abiboulaye",
+    role: "Directeur des Études, Groupe Scolaire Islamique Al Qalam",
+    text: "Dans le cadre de notre volonté de professionnalisation, M. SOW nous a accompagnés avec un dévouement exemplaire dans deux chantiers majeurs : la formation de notre équipe de direction et l'accompagnement stratégique pour le développement de notre groupe. Par son expertise, sa rigueur et sa vision pédagogique, il a su renforcer les capacités de nos directeurs et doter notre institution d'une feuille de route claire, ambitieuse et réaliste. Nous recommandons vivement son encadrement à toute institution scolaire aspirant à l'excellence.",
   },
 ];
 
@@ -164,7 +154,7 @@ const Index = () => {
             subtitle="Témoignages"
             title="Ce que disent nos clients"
           />
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className={`grid gap-8 mx-auto ${testimonials.length === 1 ? "max-w-2xl" : "md:grid-cols-3 max-w-5xl"}`}>
             {testimonials.map((t, i) => (
               <div key={i} className="bg-card rounded-xl p-8 border border-border">
                 <div className="flex gap-1 mb-4">
