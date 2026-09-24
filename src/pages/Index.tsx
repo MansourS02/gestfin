@@ -32,21 +32,22 @@ const services = [
 ];
 
 const stats = [
-<<<<<<< HEAD
+
   { value: "20+", label: "Années d'expérience du Directeur" },
-=======
+
   { value: "20+", label: "Années d'expérience" },
->>>>>>> origin/main
+
   { value: "100%", label: "Engagement qualité" },
 ];
 
 const testimonials = [
   {
-<<<<<<< HEAD
+
     name: "M. Ndiaye Abiboulaye",
     role: "Directeur des Études, Groupe Scolaire Islamique Al Qalam",
     text: "Dans le cadre de notre volonté de professionnalisation, M. SOW nous a accompagnés avec un dévouement exemplaire dans deux chantiers majeurs : la formation de notre équipe de direction et l'accompagnement stratégique pour le développement de notre groupe. Par son expertise, sa rigueur et sa vision pédagogique, il a su renforcer les capacités de nos directeurs et doter notre institution d'une feuille de route claire, ambitieuse et réaliste. Nous recommandons vivement son encadrement à toute institution scolaire aspirant à l'excellence.",
-=======
+  },
+  {
     name: "Fatou Diallo",
     role: "DG, Teranga Solutions",
     text: "GEST a transformé notre vision stratégique. Un accompagnement professionnel et rigoureux qui a propulsé notre entreprise.",
@@ -60,7 +61,7 @@ const testimonials = [
     name: "Aminata Ba",
     role: "Directrice Marketing, AfriBrand",
     text: "Les formations dispensées par M. Sow ont révolutionné notre approche du marketing digital. Résultats concrets en 3 mois.",
->>>>>>> origin/main
+
   },
 ];
 
@@ -77,22 +78,22 @@ const Index = () => {
         <div className="relative container mx-auto px-4 py-20">
           <div className="max-w-2xl">
             <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/20 text-secondary text-sm font-semibold mb-6 animate-fade-in">
-<<<<<<< HEAD
+
               Cabinet de conseil depuis 2024
-=======
+
               Cabinet de conseil depuis 2004
->>>>>>> origin/main
+
             </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
               Votre partenaire en{" "}
               <span className="text-gradient">Gestion, Étude & Stratégie</span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-primary-foreground/75 leading-relaxed max-w-xl animate-fade-in" style={{ animationDelay: "0.2s" }}>
-<<<<<<< HEAD
+
               Plus de 20 ans d'expérience de son Directeur au service des entreprises africaines. Conseil en marketing, gestion et stratégie sur mesure.
-=======
+
               Plus de 20 ans d'expertise au service des entreprises africaines. Conseil en marketing, gestion et stratégie sur mesure.
->>>>>>> origin/main
+
             </p>
             <div className="mt-8 flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <Link to="/rendez-vous">
@@ -174,7 +175,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
       {/* Témoignages */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
@@ -182,11 +182,7 @@ const Index = () => {
             subtitle="Témoignages"
             title="Ce que disent nos clients"
           />
-<<<<<<< HEAD
           <div className={`grid gap-8 mx-auto ${testimonials.length === 1 ? "max-w-2xl" : "md:grid-cols-3 max-w-5xl"}`}>
-=======
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
->>>>>>> origin/main
             {testimonials.map((t, i) => (
               <div key={i} className="bg-card rounded-xl p-8 border border-border">
                 <div className="flex gap-1 mb-4">

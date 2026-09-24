@@ -1,5 +1,10 @@
 import Header from "./Header";
-import Footer from "./Footer";
+
+const Footer = () => (
+  <footer className="border-t bg-gray-100 py-4 text-center text-sm text-gray-600">
+    © 2025 Gest Connect
+  </footer>
+);
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
