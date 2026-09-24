@@ -32,11 +32,7 @@ const services = [
 ];
 
 const stats = [
-
   { value: "20+", label: "Années d'expérience du Directeur" },
-
-  { value: "20+", label: "Années d'expérience" },
-
   { value: "100%", label: "Engagement qualité" },
 ];
 
@@ -112,7 +108,6 @@ const Index = () => {
             {stats.map((s, i) => (
               <div key={i} className="text-center py-4">
                 <div className="font-display text-3xl md:text-4xl font-bold text-secondary">{s.value}</div>
-                <div className="text-primary-foreground/60 text-sm mt-1">{s.label}</div>
               </div>
             ))}
           </div>
