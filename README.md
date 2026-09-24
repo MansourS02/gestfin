@@ -117,6 +117,7 @@ Téléphone : +221 775041565
 Email : gestasow@gmail.com
 Registre : TEB RC.SN_DKR.2024.4.43430
 
+<<<<<<< HEAD
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
@@ -134,6 +135,15 @@ Prefer working locally? You need Node.js and npm — [install with nvm](https://
 ```sh
 git clone <this-repository-url>
 cd <repository-name>
+=======
+## Développement
+
+Prérequis : Node.js et npm (installation recommandée via [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)).
+
+```sh
+git clone <url-du-repo>
+cd gest-connect
+>>>>>>> origin/main
 npm i
 npm run dev
 ```
