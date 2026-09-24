@@ -37,9 +37,17 @@ const poles = [
     icon: Target,
     color: "bg-accent",
     services: [
-      { icon: Megaphone, title: "Audit marketing", desc: "Évaluation de votre positionnement marketing et recommandations d'amélioration." },
       { icon: Target, title: "Plan stratégique de développement", desc: "Définition de votre vision à long terme et feuille de route opérationnelle." },
       { icon: BarChart3, title: "Évaluation et suivi", desc: "Indicateurs de performance, tableaux de bord et suivi de vos objectifs stratégiques." },
+    ],
+  },
+  {
+    id: "audit-marketing",
+    title: "Audit Marketing",
+    icon: Megaphone,
+    color: "bg-secondary",
+    services: [
+      { icon: Megaphone, title: "Audit marketing", desc: "Évaluation de votre positionnement marketing et recommandations d'amélioration." },
     ],
   },
   {
@@ -49,7 +57,7 @@ const poles = [
     color: "bg-secondary",
     services: [
       { icon: Megaphone, title: "Marketing & stratégie digitale", desc: "Maîtrisez les outils du marketing digital pour développer votre présence en ligne." },
-      { icon: Users, title: "Management des unités commerciales", desc: "Techniques de management et leadership pour piloter vos équipes commerciales." },
+      { icon: Users, title: "Management des unités commerciales", desc: "Management et leadership pour piloter vos équipes commerciales." },
       { icon: Handshake, title: "Négociation des relations d'affaires", desc: "Développez vos compétences en négociation commerciale et partenariats stratégiques." },
       { icon: AlertTriangle, title: "Gestion des crises", desc: "Anticipation, gestion et communication de crise pour protéger votre réputation." },
     ],

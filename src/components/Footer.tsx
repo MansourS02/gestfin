@@ -13,7 +13,7 @@ const Footer = () => {
               <img src={logoGest} alt="Logo GEST" className="h-14 w-auto" />
             </div>
             <p className="text-primary-foreground/60 text-sm leading-relaxed">
-              Gestion · Étude · Stratégie Marketing. Plus de 20 ans d'expertise au service de votre réussite.
+              Gestion · Étude · Stratégie Marketing. Plus de 20 ans d'expertise de notre Directeur au service de votre réussite.
             </p>
           </div>
 

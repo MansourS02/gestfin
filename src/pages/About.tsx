@@ -20,7 +20,7 @@ const About = () => {
             light
             subtitle="Notre histoire"
             title="À propos du Cabinet GEST"
-            description="Fondé par Amari Sow, le Cabinet GEST accompagne les entreprises dans leur croissance depuis plus de deux décennies."
+            description="Fondé par Amari Sow, fort de plus de deux décennies d'expérience, le Cabinet GEST accompagne les entreprises dans leur croissance."
           />
         </div>
       </section>
@@ -95,7 +95,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center">
             {[
-              { value: "20+", label: "Années d'expérience" },
+              { value: "20+", label: "Années d'expérience du Directeur" },
               { value: "500+", label: "Projets réalisés" },
               { value: "200+", label: "Clients accompagnés" },
               { value: "15+", label: "Secteurs couverts" },

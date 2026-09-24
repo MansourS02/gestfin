@@ -32,7 +32,7 @@ const services = [
 ];
 
 const stats = [
-  { value: "20+", label: "Années d'expérience" },
+  { value: "20+", label: "Années d'expérience du Directeur" },
   { value: "100%", label: "Engagement qualité" },
 ];
 
@@ -57,14 +57,14 @@ const Index = () => {
         <div className="relative container mx-auto px-4 py-20">
           <div className="max-w-2xl">
             <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/20 text-secondary text-sm font-semibold mb-6 animate-fade-in">
-              Cabinet de conseil depuis 2004
+              Cabinet de conseil depuis 2024
             </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
               Votre partenaire en{" "}
               <span className="text-gradient">Gestion, Étude & Stratégie</span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-primary-foreground/75 leading-relaxed max-w-xl animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              Plus de 20 ans d'expertise au service des entreprises africaines. Conseil en marketing, gestion et stratégie sur mesure.
+              Plus de 20 ans d'expérience de son Directeur au service des entreprises africaines. Conseil en marketing, gestion et stratégie sur mesure.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <Link to="/rendez-vous">
