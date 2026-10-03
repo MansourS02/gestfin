@@ -3,9 +3,10 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
 import heroBg from "@/assets/hero-bg.jpg";
+import TestimonialStack from "@/components/TestimonialStack";
 import {
   BarChart3, BookOpen, Users, TrendingUp, Shield, Award,
-  ArrowRight, CheckCircle2, Star, Phone
+  ArrowRight, CheckCircle2, Phone
 } from "lucide-react";
 
 const services = [
@@ -38,26 +39,40 @@ const stats = [
 
 const testimonials = [
   {
-
+    name: "Mamadou DIOP",
+    role: "Directeur, IACOM",
+    text: "M. SOW a accompagné IACOM avec une expertise reconnue dans l'animation de sa cellule \"Stratégie et développement\" et dans l'élaboration de son plan stratégique pour la certification de l'ANAQ-SUP.",
+    status: "Accompagnement terminé",
+  },
+  {
+    name: "Mouhamed SARR",
+    role: "Gérant, AMKAS BIO",
+    text: "M. SOW Amari nous accompagne dans la gestion financière et conseil en management des affaires. Ses conseils avisés ont beaucoup contribué à l'amélioration du management de AMKAS.",
+    status: "En cours",
+  },
+  {
+    name: "Cabinet MAG",
+    role: "Consultant et formateur associé",
+    text: "GEST a animé des modules de formation en gestion d'entreprise pour les partenaires de MAG. Nous avons particulièrement apprécié son professionnalisme, sa maîtrise des thématiques et le caractère pratique des formations. Nous recommandons vivement le cabinet pour la qualité de ses interventions et son approche pédagogique.",
+    status: "Terminé",
+  },
+  {
+    name: "I. NDIAYE",
+    role: "Directeur Général, EC2M",
+    text: "Le Cabinet GEST nous a accompagné avec satisfaction dans le management et dans la stratégie marketing de EC2M.",
+    status: "Terminé",
+  },
+  {
+    name: "Daouda AIDARA",
+    role: "Directeur Exécutif, ONG ARPIERCA",
+    text: "Le Cabinet GEST nous accompagne avec satisfaction dans la gestion opérationnelle et stratégique de notre ONG, notamment dans nos activités socio-économiques avec des résultats très appréciables.",
+    status: "En cours",
+  },
+  {
     name: "M. Ndiaye Abiboulaye",
     role: "Directeur des Études, Groupe Scolaire Islamique Al Qalam",
-    text: "Dans le cadre de notre volonté de professionnalisation, M. SOW nous a accompagnés avec un dévouement exemplaire dans deux chantiers majeurs : la formation de notre équipe de direction et l'accompagnement stratégique pour le développement de notre groupe. Par son expertise, sa rigueur et sa vision pédagogique, il a su renforcer les capacités de nos directeurs et doter notre institution d'une feuille de route claire, ambitieuse et réaliste. Nous recommandons vivement son encadrement à toute institution scolaire aspirant à l'excellence.",
-  },
-  {
-    name: "Fatou Diallo",
-    role: "DG, Teranga Solutions",
-    text: "GEST a transformé notre vision stratégique. Un accompagnement professionnel et rigoureux qui a propulsé notre entreprise.",
-  },
-  {
-    name: "Ibrahima Ndiaye",
-    role: "Fondateur, SenTech SA",
-    text: "Grâce au business plan élaboré par GEST, nous avons obtenu les financements nécessaires à notre expansion régionale.",
-  },
-  {
-    name: "Aminata Ba",
-    role: "Directrice Marketing, AfriBrand",
-    text: "Les formations dispensées par M. Sow ont révolutionné notre approche du marketing digital. Résultats concrets en 3 mois.",
-
+    text: "M. SOW Amari nous a accompagnés avec un dévouement exemplaire dans la formation de notre équipe de direction et l'élaboration de notre stratégie de développement. Par son expertise et sa rigueur, il a renforcé les capacités de nos directeurs et doté le Groupe Scolaire Islamique Al Qalam d'une feuille de route claire et ambitieuse. Nous recommandons vivement son encadrement à toute institution scolaire aspirant à l'excellence.",
+    status: "Terminé",
   },
 ];
 
@@ -81,7 +96,6 @@ const Index = () => {
               <span className="text-gradient">Gestion, Étude & Stratégie</span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-primary-foreground/75 leading-relaxed max-w-xl animate-fade-in" style={{ animationDelay: "0.2s" }}>
-
               Plus de 20 ans d'expérience de son Directeur au service des entreprises africaines. Conseil en marketing, gestion et stratégie sur mesure.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
@@ -164,6 +178,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+
       {/* Témoignages */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
@@ -171,22 +186,7 @@ const Index = () => {
             subtitle="Témoignages"
             title="Ce que disent nos clients"
           />
-          <div className={`grid gap-8 mx-auto ${testimonials.length === 1 ? "max-w-2xl" : "md:grid-cols-3 max-w-5xl"}`}>
-            {testimonials.map((t, i) => (
-              <div key={i} className="bg-card rounded-xl p-8 border border-border">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, j) => (
-                    <Star key={j} className="w-4 h-4 fill-gold text-gold" />
-                  ))}
-                </div>
-                <p className="text-muted-foreground leading-relaxed mb-6 italic">"{t.text}"</p>
-                <div>
-                  <div className="font-semibold text-foreground">{t.name}</div>
-                  <div className="text-sm text-muted-foreground">{t.role}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <TestimonialStack testimonials={testimonials} />
         </div>
       </section>
 
