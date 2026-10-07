@@ -29,6 +29,8 @@ const poles = [
       { icon: TrendingUp, title: "Gestion et développement d'affaires", desc: "Stratégies de croissance et optimisation de vos processus commerciaux." },
       { icon: Shield, title: "Gestion de patrimoine", desc: "Conseil en gestion et valorisation de votre patrimoine professionnel et personnel." },
       { icon: BarChart3, title: "Audit et contrôle de gestion", desc: "Diagnostic complet de votre organisation et mise en place d'outils de pilotage." },
+      { icon: TrendingUp, title: "Gestion et Création d'entreprise", desc: "Accompagnement de la création à la structuration de votre entreprise : formalités, montage du projet et mise en place d'une gestion efficace au quotidien." },
+
     ],
   },
   {
