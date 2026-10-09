@@ -31,6 +31,7 @@ const serviceOptions = [
   "Business plan",
   "Gestion et développement d'affaires",
   "Gestion de patrimoine",
+  "Gestion et Création d'entreprise",
   "Audit et contrôle de gestion",
   "Audit marketing",
   "Plan stratégique",
