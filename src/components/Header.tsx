@@ -1,102 +1,139 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import {
+  BriefcaseBusiness,
+  CalendarDays,
+  GraduationCap,
+  House,
+  Info,
+  Mail,
+  Menu,
+  Phone,
+  X,
+} from "lucide-react";
 import logoGest from "@/assets/logo-gest.png";
 
 const navItems = [
-  { label: "Accueil", path: "/" },
-  { label: "À propos", path: "/a-propos" },
-  { label: "Services", path: "/services" },
-  { label: "Formations", path: "/formations" },
-  { label: "Contact", path: "/contact" },
+  { label: "Accueil", path: "/", icon: House },
+  { label: "À propos", path: "/a-propos", icon: Info },
+  { label: "Services", path: "/services", icon: BriefcaseBusiness },
+  { label: "Formations", path: "/formations", icon: GraduationCap },
+  { label: "Contact", path: "/contact", icon: Mail },
 ];
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-md border-b border-primary/20 shadow-sm">
-      <div className="container mx-auto px-4 flex items-center justify-between h-16 md:h-20">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <img src={logoGest} alt="Logo GEST" className="h-12 w-auto" />
-          <div>
-            <span className="hidden md:block text-primary text-[10px] leading-none tracking-wider uppercase">
-              Gestion · Étude · Stratégie
-            </span>
-          </div>
+  const closeMenu = () => setIsOpen(false);
+  const isActive = (path: string) =>
+    path === "/" ? location.pathname === path : location.pathname.startsWith(path);
+
+  const navigation = (
+    <nav aria-label="Navigation principale" className="flex flex-col gap-2">
+      {navItems.map(({ label, path, icon: Icon }) => (
+        <Link
+          key={path}
+          to={path}
+          onClick={closeMenu}
+          aria-current={isActive(path) ? "page" : undefined}
+          className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-colors ${
+            isActive(path)
+              ? "bg-white text-blue-800 shadow-sm"
+              : "text-white/80 hover:bg-white/10 hover:text-white"
+          }`}
+        >
+          <Icon aria-hidden="true" className="h-5 w-5 shrink-0" />
+          {label}
         </Link>
+      ))}
+    </nav>
+  );
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-1">
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className={`px-4 py-2 rounded-md text-sm font-medium text-primary transition-colors hover:bg-primary/10 ${
-                location.pathname === item.path
-                  ? "bg-primary/10 font-semibold"
-                  : ""
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+  return (
+    <>
+      <header className="fixed inset-x-0 top-0 z-50 flex h-16 items-center justify-between border-b border-blue-100 bg-white px-4 shadow-sm md:hidden">
+        <Link to="/" onClick={closeMenu} aria-label="GEST - Accueil">
+          <img src={logoGest} alt="Logo GEST" className="h-11 w-auto" />
+        </Link>
+        <button
+          type="button"
+          onClick={() => setIsOpen((open) => !open)}
+          aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-navigation"
+          className="rounded-lg p-2 text-blue-900 transition-colors hover:bg-blue-50"
+        >
+          {isOpen ? <X aria-hidden="true" className="h-6 w-6" /> : <Menu aria-hidden="true" className="h-6 w-6" />}
+        </button>
+      </header>
 
-        {/* CTA */}
-        <div className="hidden md:flex items-center gap-3">
+      <aside className="fixed inset-y-0 left-0 z-40 hidden w-64 flex-col bg-gradient-to-b from-blue-900 to-blue-800 px-5 py-6 text-white shadow-xl md:flex">
+        <Link to="/" className="mb-10 flex items-center justify-center rounded-xl bg-white p-3" aria-label="GEST - Accueil">
+          <img src={logoGest} alt="Logo GEST" className="h-14 w-auto" />
+        </Link>
+        <p className="mb-4 px-4 text-xs font-semibold uppercase tracking-[0.18em] text-blue-200">
+          Menu principal
+        </p>
+        {navigation}
+        <div className="mt-auto border-t border-white/15 pt-5">
           <a
             href="tel:+221775041565"
-            className="text-primary hover:text-secondary transition-colors"
+            className="mb-4 flex items-center gap-3 px-4 text-sm text-white/80 transition-colors hover:text-white"
           >
-            <Phone className="w-4 h-4" />
+            <Phone aria-hidden="true" className="h-5 w-5" />
+            +221 77 504 15 65
           </a>
-          <Link to="/rendez-vous">
-            <Button variant="secondary" size="sm" className="font-semibold">
-              Prendre RDV
-            </Button>
+          <Link
+            to="/rendez-vous"
+            className="flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-blue-900 transition-colors hover:bg-blue-50"
+          >
+            <CalendarDays aria-hidden="true" className="h-5 w-5" />
+            Prendre rendez-vous
           </Link>
         </div>
+      </aside>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-primary p-2 hover:bg-primary/10"
-        >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </div>
-
-      {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-primary/20">
-          <nav className="container mx-auto px-4 py-4 flex flex-col gap-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setIsOpen(false)}
-                className={`px-4 py-3 rounded-md text-sm font-medium text-primary transition-colors hover:bg-primary/10 ${
-                  location.pathname === item.path
-                    ? "bg-primary/10 font-semibold"
-                    : ""
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <Link to="/rendez-vous" onClick={() => setIsOpen(false)}>
-              <Button variant="secondary" className="w-full mt-2 font-semibold">
-                Prendre rendez-vous
-              </Button>
+        <div className="fixed inset-0 top-16 z-40 md:hidden">
+          <button
+            type="button"
+            aria-label="Fermer le menu"
+            onClick={closeMenu}
+            className="absolute inset-0 h-full w-full bg-slate-950/40"
+          />
+          <aside
+            id="mobile-navigation"
+            className="relative flex h-full w-[min(18rem,85vw)] flex-col bg-gradient-to-b from-blue-900 to-blue-800 px-5 py-6 text-white shadow-xl"
+          >
+            <Link to="/" onClick={closeMenu} className="mb-8 flex items-center justify-center rounded-xl bg-white p-3" aria-label="GEST - Accueil">
+              <img src={logoGest} alt="Logo GEST" className="h-14 w-auto" />
             </Link>
-          </nav>
+            <p className="mb-4 px-4 text-xs font-semibold uppercase tracking-[0.18em] text-blue-200">
+              Menu principal
+            </p>
+            {navigation}
+            <div className="mt-auto border-t border-white/15 pt-5">
+              <a
+                href="tel:+221775041565"
+                className="mb-4 flex items-center gap-3 px-4 text-sm text-white/80"
+              >
+                <Phone aria-hidden="true" className="h-5 w-5" />
+                +221 77 504 15 65
+              </a>
+              <Link
+                to="/rendez-vous"
+                onClick={closeMenu}
+                className="flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-blue-900"
+              >
+                <CalendarDays aria-hidden="true" className="h-5 w-5" />
+                Prendre rendez-vous
+              </Link>
+            </div>
+          </aside>
         </div>
       )}
-    </header>
+    </>
   );
 };
 
